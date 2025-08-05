@@ -43,24 +43,26 @@ body {
   line-height: 33px;
 }
 .left-side {
-  text-align: left;
-  font-size: 24px;
+  text-align: center;
   line-height: 33px;
   color: #fff;
-  font-size: 13px;
   font-weight: 400;
   cursor: pointer;
   position: absolute;
   left: 0%;
 }
+.text {
+  text-align: center;
+  font-size: 16px;
+}
 .icon {
   width: 20px;
   height: 20px;
   fill: #fff;
-  background-color: #141414;
   cursor: pointer;
   border-radius: 100%;
   margin-right: 10px;
+  margin-left: 20px;
 }
 .videos {
   display: grid;
@@ -70,41 +72,75 @@ body {
   margin-bottom: 15px;
 }
 .video {
+  position: relative;
   text-align: center;
   margin: 0;
   padding: 4px;
+  transition: transform 0.3s ease;
 }
 .video:hover {
   transform: scale(1.12);
   transition: transform 0.3s ease;
+}
+.video:hover img {
+  border: 2px solid #de8214;
   opacity: 0.5;
+}
+.video:hover .genres {
+  opacity: 1 !important;
 }
 .pic img {
   width: 190px;
   height: 280px;
   border-radius: 20px;
   cursor: pointer;
+  transition: border 0.3s ease;
+  border: 2px solid transparent;
 }
 .genres {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
+  width: 100%;
+  gap: 8px;
   top: 40%;
   bottom: 60%;
   position: absolute;
-  font-weight: 600;
-  margin-right: 15px;
+  opacity: 0;
 }
 .genre {
   border-radius: 5px;
   padding: 5px;
-  background-color: rgb(200, 200, 200, 0.5);
+  margin: 2px;
+  background-color: rgb(200, 200, 200, 0.3);
+  font-weight: 400;
+  color: #fff;
 }
-.genre:hover {
+.icon-bar {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  right: 5px;
+  left: 0;
   opacity: 1;
 }
-
+.mic svg {
+  width: 16px;
+  height: 16px;
+  padding: 5px 5px 5px 5px;
+  margin: 2px 7px 0 0;
+  background-color: rgb(0, 0, 0, 0.7);
+}
+.left {
+  position: absolute;
+  left: 5px;
+}
+.play svg {
+  padding: 5px 4px 5px 8px;
+  margin: 2px 0px 0 7px;
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+  background-color: rgb(0, 0, 0, 0.7);
+  border-radius: 15px;
+}
 .definition {
   margin-top: 12px;
 }
