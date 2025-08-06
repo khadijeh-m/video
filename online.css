@@ -50,27 +50,24 @@ body {
   cursor: pointer;
   position: absolute;
   left: 0%;
+  padding: 0%;
 }
 .text {
   text-align: center;
-  font-size: 16px;
+  font-size: 13px;
 }
-.icon {
-  width: 20px;
-  height: 20px;
-  fill: #fff;
-  cursor: pointer;
+.icon-next {
+  background: #000000;
   border-radius: 100%;
-  margin-right: 10px;
-  margin-left: 20px;
+  height: 30px;
+  width: 30px;
 }
-.videos {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
-  margin-top: 30px;
-  margin-bottom: 15px;
+.icon-next svg {
+  fill: #fff;
+  width: 16px;
+  height: 16px;
 }
+
 .video {
   position: relative;
   text-align: center;
@@ -126,6 +123,8 @@ body {
   height: 16px;
   padding: 5px 5px 5px 5px;
   margin: 2px 7px 0 0;
+  border-radius: 100%;
+  fill: #fff;
   background-color: rgb(0, 0, 0, 0.7);
 }
 .left {
@@ -168,4 +167,39 @@ body {
 }
 .bottom {
   margin-bottom: 80px;
+}
+.videos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.videos .video {
+  display: none;
+}
+.videos .video:nth-child(-n + 2) {
+  display: block;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .videos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .videos .video {
+    display: none;
+  }
+  .videos .video:nth-child(-n + 4) {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .videos {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .videos .video {
+    display: block;
+  }
 }
